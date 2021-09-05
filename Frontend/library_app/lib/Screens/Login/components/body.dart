@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/Screens/Login/components/background.dart';
-import 'package:library_app/Screens/Signup/signup_screen.dart';
 import 'package:library_app/Screens/components/dotteddividerwithtext.dart';
 import 'package:library_app/Screens/components/roundedbutton.dart';
 import 'package:library_app/Screens/components/roundedpasswordtextfield.dart';
