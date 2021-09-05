@@ -29,7 +29,7 @@ class RoundedButton extends StatelessWidget {
                 onPressed: press,
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 40)),
+                      EdgeInsets.symmetric(vertical: 10, horizontal: 40)),
                   backgroundColor: MaterialStateProperty.all<Color>(color),
                 ),
                 child: Text(

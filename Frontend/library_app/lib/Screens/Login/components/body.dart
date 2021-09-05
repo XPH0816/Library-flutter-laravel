@@ -3,9 +3,9 @@ import 'package:library_app/Screens/Login/components/background.dart';
 import 'package:library_app/Screens/Signup/signup_screen.dart';
 import 'package:library_app/Screens/components/dotteddividerwithtext.dart';
 import 'package:library_app/Screens/components/roundedbutton.dart';
+import 'package:library_app/Screens/components/roundedpasswordtextfield.dart';
+import 'package:library_app/Screens/components/roundedtextfield.dart';
 import 'package:library_app/Screens/components/textbox.dart';
-import 'package:library_app/Screens/components/textfieldcontainer.dart';
-import 'package:library_app/Screens/components/textfieldcontent.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -32,17 +32,8 @@ class Body extends StatelessWidget {
           SizedBox(
             height: size.height * (space - 0.03),
           ),
-          TextFieldContainer(
-            spaceBtwEach: size.height * (space - 0.02),
-            child: TextFieldContent(
-              icon: Icons.person_outlined,
-              hintText: "Username",
-            ),
-          ),
-          TextFieldContainer(
-              spaceBtwEach: 0,
-              child: TextFieldContent(
-                  icon: Icons.vpn_key_outlined, hintText: "Password")),
+          RoundedTextField(hintText: "Username", space: space),
+          RoundedPasswordTextField(space: space),
           SizedBox(
             height: size.height * (space - 0.01),
           ),

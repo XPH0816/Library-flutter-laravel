@@ -5,12 +5,15 @@ class TextFieldContent extends StatelessWidget {
   final String fontfamily, hintText;
   final IconData icon;
   final Color textColor;
+  final bool obscureText;
+
   const TextFieldContent({
     Key? key,
     this.fontfamily = "SFProText",
     required this.hintText,
     required this.icon,
     this.textColor = kTextColor,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
