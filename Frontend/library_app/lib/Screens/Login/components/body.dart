@@ -53,9 +53,7 @@ class Body extends StatelessWidget {
           RoundedButton(
             text: "Create an Account",
             press: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SignupScreen();
-              }));
+              Navigator.pop(context);
             },
             color: Colors.white.withOpacity(.28),
           )

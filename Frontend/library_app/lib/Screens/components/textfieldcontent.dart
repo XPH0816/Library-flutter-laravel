@@ -19,6 +19,7 @@ class TextFieldContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: obscureText,
       style: TextStyle(
           fontFamily: fontfamily,
           color: textColor,
