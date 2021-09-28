@@ -42,6 +42,52 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    /**
+     * @OA\Post(
+     * path="/books",
+     * summary="store",
+     * description="Store Book List",
+     * operationId="store",
+     * tags={"books"},
+     * @OA\RequestBody(
+     *      @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="nameBook",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="price",
+     *                     type="double"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="type",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="author",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="publisher",
+     *                     type="string"
+     *                 ),
+     *                 example={"nameBook": "Sample1", "price": 13.6, "type":"Fantasy", "author":"SampleAuthor", "publisher":"SamplePublisher",}
+     *             )
+     *         )
+     *     ),
+     * @OA\Response(
+     *     response=200,
+     *     description="Return Book Content",
+     *  ),
+     * @OA\Response(
+     *    response=406,
+     *    description="The Content is not completed",
+     *     )
+     * ),
+     * security={{"bearerAuth":{}}}
+    */
     public function store(Request $request)
     {
         //
@@ -138,6 +184,38 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /**
+     * @OA\Put(
+     *     path="/books/{id}",
+     *     tags={"books"},
+     *     summary="update",
+     *     description="Update specific books",
+     *     operationId="update",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer",
+     *             maximum=10,
+     *             minimum=1
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful Operation",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Book Not Found",
+     *     ),
+     *     @OA\Response(
+     *         response=406,
+     *         description="The Content is not completed",
+     *     ),
+     *     security={{"bearerAuth":{}}}
+     * )
+     */
     public function update(Request $request, $id)
     {
         //
@@ -180,6 +258,38 @@ class BookController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Delete(
+     *     path="/books/{id}",
+     *     tags={"books"},
+     *     summary="show",
+     *     description="Show specific books",
+     *     operationId="show",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer",
+     *             maximum=10,
+     *             minimum=1
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful Operation",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Book Not Found",
+     *     ),
+     *     @OA\Response(
+     *         response=503,
+     *         description="Book has been borrowed",
+     *     ),
+     *     security={{"bearerAuth":{}}}
+     * )
      */
     public function destroy($id)
     {
