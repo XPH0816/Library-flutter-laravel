@@ -108,6 +108,8 @@ class LoginController extends Controller
 
         return response([
             'message' => 'Login Successfully',
+            'name' => $user["name"],
+            'email' => $user["email"],
             'token' => $token
         ]);
 
@@ -116,7 +118,33 @@ class LoginController extends Controller
     public function user(){
         return Auth::user();
     }
-
+    /**
+     * @OA\Get(
+     *     path="/delete/{id}",
+     *     tags={"User"},
+     *     summary="show",
+     *     description="Delete specific User",
+     *     operationId="Delete",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer",
+     *             maximum=10,
+     *             minimum=1
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Delete User Sucessfully",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User Not Exist",
+     *     ),
+     * )
+     */
     public function destory($id){
         $user = User::find($id);
         if (!$user){
