@@ -20,14 +20,6 @@ use Illuminate\Routing\Controller as BaseController;
  *     description="Everything about the Books",
  * )
  * @OA\Tag(
- *     name="borrows",
- *     description="Everything about User Borrowed Books",
- * )
- * @OA\Tag(
- *     name="lists",
- *     description="Everything about Haven't Borrowed Books",
- * )
- * @OA\Tag(
  *     name="Login",
  *     description="Authorization",
  * )
